@@ -39,7 +39,9 @@ class FilemanagerInput extends InputWidget
         if ($this->hasModel()) {
             if ($this->preview) {
                 echo '<div class="form-group"' . (empty($this->model->{$this->attribute}) ? ' style="display:none"' : '') . '>
-                          <div id="preview" class="control-label col-sm-3">' . $this->model->{$this->attribute} . '</div>
+                          <div id="preview" class="control-label col-sm-3">' .
+                              Html::a($this->model->{$this->attribute}, ['/admin/candidates/download', 'id' => $this->model->id]) .
+                          '</div>
                       </div>';
             }
             if (!ArrayHelper::getValue($this->options, 'id')) {
