@@ -14,7 +14,8 @@ class FilemanagerInput extends InputWidget
     
     public $configPath = [
         'upload_dir' => '/files/',
-        'current_path' => '../../../files/'
+        'current_path' => '../../../files/',
+        'thumbs_base_path' => '../../../files/thumbs/'
     ];
     
     public function init()
@@ -41,7 +42,7 @@ class FilemanagerInput extends InputWidget
                 echo '<div class="form-group"' . (empty($this->model->{$this->attribute}) ? ' style="display:none"' : '') . '>
                           <div id="preview" class="control-label col-sm-3">' .
                               Html::a($this->model->{$this->attribute}, ['/admin/candidates/download', 'id' => $this->model->id]) .
-                          '</div>
+                          '</div> 
                       </div>';
             }
             if (!ArrayHelper::getValue($this->options, 'id')) {

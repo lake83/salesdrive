@@ -18,7 +18,8 @@ class RedactorTinymce extends Tinymce
     public $fileManagerOptions = [
         'configPath' => [
             'upload_dir' => '/files/',
-            'current_path' => '../../../files/'
+            'current_path' => '../../../files/',
+            'thumbs_base_path' => '../../../files/thumbs/'
         ]
     ];
     
