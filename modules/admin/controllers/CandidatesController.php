@@ -17,7 +17,7 @@ class CandidatesController extends AdminController
         if (($cv = \app\models\Candidates::find()->select('cv')->where(['id' => $id])->scalar()) &&
             file_exists(Yii::getAlias('@webroot/files/') . $cv)
         ) {
-            return Yii::$app->response->sendFile(Yii::getAlias('@webroot/files/') . $cv, $cv)->send();
+            return Yii::$app->response->xSendFile(Yii::getAlias('@webroot/files/') . $cv, $cv)->send();
         } else {
             Yii::$app->session->setFlash('error', Yii::t('app', 'Failed to send file.'));
             return $this->redirect(Yii::$app->request->referrer);
